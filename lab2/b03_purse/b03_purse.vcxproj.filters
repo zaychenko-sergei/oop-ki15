@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Student Class">
+      <UniqueIdentifier>{6790392e-13de-4bc0-8772-1996e5291524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{e4d914ea-3495-4a7e-b3cb-ecaef9ed8cdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{6ddcfb41-b3d6-4fea-9c29-efa868097b59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="messages.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="testslib.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="purse.hpp">
+      <Filter>Student Class</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="purse.cpp">
+      <Filter>Student Class</Filter>
+    </ClCompile>
+    <ClCompile Include="purse_test.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
