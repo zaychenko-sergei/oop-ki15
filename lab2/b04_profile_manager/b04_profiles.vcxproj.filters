@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Student Class">
+      <UniqueIdentifier>{62226b04-38fc-4aa5-95d4-0215455b3699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{025507aa-f46c-419a-9edc-ebc32a4aa357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{44d0aad1-ccb1-4846-add0-1bd9da00bfab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="messages.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="testslib.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="profiles_manager.hpp">
+      <Filter>Student Class</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="profiles_manager.cpp">
+      <Filter>Student Class</Filter>
+    </ClCompile>
+    <ClCompile Include="profiles_manager_test.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
