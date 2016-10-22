@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Student Class">
+      <UniqueIdentifier>{cf5b076e-9e71-4e76-8682-d3f658fc37e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{83d5ca18-71a3-4074-ae41-b6eec4d2d17a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{d6987120-5d4e-483c-ad25-85073563e2be}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="date.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="messages.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="testslib.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="install_registry.hpp">
+      <Filter>Student Class</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="date.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="install_registry.cpp">
+      <Filter>Student Class</Filter>
+    </ClCompile>
+    <ClCompile Include="install_registry_test.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
