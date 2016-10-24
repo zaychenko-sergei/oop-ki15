@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Student Class">
+      <UniqueIdentifier>{4e723475-144d-4423-8505-734d16325dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{c8653512-f8c5-40de-80dd-b94185298ff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{d8b2902e-6f58-4ea2-b1b5-208dc1a3ffb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="messages.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="blacklist.hpp">
+      <Filter>Student Class</Filter>
+    </ClInclude>
+    <ClInclude Include="testslib.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="blacklist.cpp">
+      <Filter>Student Class</Filter>
+    </ClCompile>
+    <ClCompile Include="blacklist_test.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
