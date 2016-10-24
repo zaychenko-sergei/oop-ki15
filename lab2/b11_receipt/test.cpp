@@ -534,21 +534,14 @@ DECLARE_OOP_TEST( receipt_6_4_track_debt_with_negative_amount )
 	const Receipt & rR = r;
 
 	r.addService( "water" );
+	r.trackDebt( "water", 0.0 );
+	
+	assert( r.getDebtAmount( "water" ) == 0.0 );
 
-	ASSERT_THROWS(
-			r.trackDebt( "water", 0.0 );
-		,	Messages::InvalidAmountValue
-	);
-	ASSERT_THROWS(
-			r.trackDebt( "water", -1.0 );
-		,	Messages::InvalidAmountValue
-	);
-	ASSERT_THROWS(
-			r.trackDebt( "water", -100.0 );
-		,	Messages::InvalidAmountValue
-	);
+	r.trackDebt( "water", -1.0 );
+	assert( r.getDebtAmount( "water" ) == -1.0 );
 
-	assert( rR.getDebtAmount( "water" ) == 0.0 );
+	assert( rR.getDebtAmount( "water" ) == -1.0 );
 	assert( rR.getPaidAmount( "water" ) == 0.0 );
 }
 
@@ -698,10 +691,9 @@ DECLARE_OOP_TEST( receipt_7_4_track_pay_with_negative_amount )
 
 	r.addService( "water" );
 
-	ASSERT_THROWS(
-			r.trackPay( "water", 0.0 );
-		,	Messages::InvalidAmountValue
-	);
+	r.trackPay( "water", 0.0 );
+	assert( r.getPaidAmount( "water" ) == 0.0 );
+
 	ASSERT_THROWS(
 			r.trackPay( "water", -1.0 );
 		,	Messages::InvalidAmountValue
@@ -1091,11 +1083,11 @@ DECLARE_OOP_TEST( receipt_13_3_fetch_overpaid_matches_only_part_of_services )
 		r.trackDebt( "service 1", 100.0 );
 		r.trackPay( "service 1", 99.0 );
 	r.addService( "service 2" );
-		r.trackDebt( "service 2", 200.0 );
-		r.trackPay( "service 2", 200.0 );
+		r.trackDebt( "service 2", -200.0 );
+		r.trackPay( "service 2", 0.0 );
 	r.addService( "service 3" );
-		r.trackDebt( "service 3", 300.0 );
-		r.trackPay( "service 3", 350.0 );
+		r.trackDebt( "service 3", -300.0 );
+		r.trackPay( "service 3", 0.0 );
 
 	std::vector< std::string > result = rR.fetchOverpaid();
 	std::vector< std::string > expected = { "service 2", "service 3" };
@@ -1113,13 +1105,13 @@ DECLARE_OOP_TEST( receipt_13_4_fetch_overpaid_matches_all_services )
 	const Receipt & rR = r;
 
 	r.addService( "service 1" );
-		r.trackDebt( "service 1", 100.0 );
-		r.trackPay( "service 1", 199.0 );
+		r.trackDebt( "service 1", -100.0 );
+		r.trackPay( "service 1", 0.0 );
 	r.addService( "service 2" );
-		r.trackDebt( "service 2", 200.0 );
+		r.trackDebt( "service 2", -200.0 );
 		r.trackPay( "service 2", 200.0 );
 	r.addService( "service 3" );
-		r.trackDebt( "service 3", 300.0 );
+		r.trackDebt( "service 3", -300.0 );
 		r.trackPay( "service 3", 350.0 );
 
 	std::vector< std::string > result = rR.fetchOverpaid();
@@ -1153,13 +1145,13 @@ DECLARE_OOP_TEST( receipt_14_2_fetch_underpaid_matches_nothing )
 	const Receipt & rR = r;
 
 	r.addService( "service 1" );
-		r.trackDebt( "service 1", 100.0 );
-		r.trackPay( "service 1", 101.0 );
+		r.trackDebt( "service 1", 0.0 );
+		r.trackPay( "service 1", 1.0 );
 	r.addService( "service 2" );
-		r.trackDebt( "service 2", 1.0 );
+		r.trackDebt( "service 2", -1.0 );
 		r.trackPay( "service 2", 200.0 );
 	r.addService( "service 3" );
-		r.trackDebt( "service 3", 222.0 );
+		r.trackDebt( "service 3", -222.0 );
 		r.trackPay( "service 3", 300.0 );
 
 	std::vector< std::string > result = rR.fetchUnderpaid();
@@ -1178,7 +1170,7 @@ DECLARE_OOP_TEST( receipt_14_3_fetch_underpaid_matches_only_part_of_services )
 	const Receipt & rR = r;
 
 	r.addService( "service 1" );
-		r.trackDebt( "service 1", 22.0 );
+		r.trackDebt( "service 1", -22.0 );
 		r.trackPay( "service 1", 23.0 );
 	r.addService( "service 2" );
 		r.trackDebt( "service 2", 200.0 );
