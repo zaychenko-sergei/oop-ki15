@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Test Program">
+      <UniqueIdentifier>{1dfbca94-1aca-45fd-b1e4-1e4921e623cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Receipt">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="messages.hpp">
+      <Filter>Receipt</Filter>
+    </ClInclude>
+    <ClInclude Include="testslib.hpp">
+      <Filter>Test Program</Filter>
+    </ClInclude>
+    <ClInclude Include="receipt.hpp">
+      <Filter>Receipt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test.cpp">
+      <Filter>Test Program</Filter>
+    </ClCompile>
+    <ClCompile Include="receipt.cpp">
+      <Filter>Receipt</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
