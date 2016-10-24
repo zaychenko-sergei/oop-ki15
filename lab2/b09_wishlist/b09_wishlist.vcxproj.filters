@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Student Class">
+      <UniqueIdentifier>{709e34c4-d6e6-471e-8f9d-00f38564bc2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{e397194b-3b7a-4920-b064-9d2113432a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{9dd11bd3-e47e-4886-aa59-e795bcc03cbc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="wishlist.cpp">
+      <Filter>Student Class</Filter>
+    </ClCompile>
+    <ClCompile Include="wishlist_test.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="wishlist.hpp">
+      <Filter>Student Class</Filter>
+    </ClInclude>
+    <ClInclude Include="testslib.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="messages.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
