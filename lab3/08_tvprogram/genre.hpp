@@ -1,4 +1,4 @@
-// (C) 2013-2015, Sergei Zaychenko, KNURE, Kharkiv, Ukraine
+// (C) 2013-2016, Sergei Zaychenko, KNURE, Kharkiv, Ukraine
 
 #ifndef _GENRE_HPP_
 #define _GENRE_HPP_
